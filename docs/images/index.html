@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Теплі моменти</title>
+    <!-- Шрифти -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .intro h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 48px;
+    letter-spacing: 0.06em;
+    background: linear-gradient(120deg, #ffcee4, #ffd1a4, #ffe5b4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+        0 4px 10px rgba(0,0,0,0.1),
+        0 0 8px rgba(255,255,255,0.6);
+    animation: fadeInTitle 1.5s ease forwards;
+}
+
+/* Легка анімація появи */
+@keyframes fadeInTitle {
+    0% { opacity: 0; transform: translateY(-20px) scale(0.95); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.intro p,
+.outro p {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.8;
+    background: linear-gradient(120deg, rgba(255,255,255,0.95), rgba(255,240,245,0.85));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+        0 1px 3px rgba(0,0,0,0.08),
+        0 0 2px rgba(255,255,255,0.4);
+    opacity: 0;
+    transform: translateY(15px);
+    animation: fadeInText 1.2s ease forwards;
+}
+
+/* Поступова поява тексту */
+@keyframes fadeInText {
+    0% { opacity: 0; transform: translateY(15px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+        body {
+            margin: 0;
+            font-family: 'Nunito', sans-serif;
+            letter-spacing: 0.02em;
+            background: linear-gradient(120deg, #dd057c, #df04ee, #f80250);
+            color: #5a4a4a;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        /* ВСТУП */
+        .intro {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .intro h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            font-size: 42px;
+            letter-spacing: 0.04em;
+        }
+
+        .intro p {
+            font-weight: 300;
+            font-size: 17px;
+        }
+
+        .intro .emoji {
+            display: block;
+            margin-top: 20px;
+            font-size: 22px;
+            letter-spacing: 6px;
+            opacity: 0.7;
+        }
+
+        /* ГАЛЕРЕЯ */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+        }
+
+        /* Картки з анімацією */
+        .photo-card {
+            background: rgba(255, 255, 255, 0.75);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            backdrop-filter: blur(6px);
+
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        .photo-card:nth-child(1) { animation-delay: 1s; }
+        .photo-card:nth-child(2) { animation-delay: 4s; }
+        .photo-card:nth-child(3) { animation-delay: 7s; }
+        .photo-card:nth-child(4) { animation-delay: 10s; }
+        .photo-card:nth-child(5) { animation-delay: 13s; }
+        .photo-card:nth-child(6) { animation-delay: 16s; }
+        .photo-card:nth-child(7) { animation-delay: 19s; }
+        .photo-card:nth-child(8) { animation-delay: 22s; }
+        .photo-card:nth-child(9) { animation-delay: 25s; }
+        .photo-card:nth-child(10) { animation-delay: 28s; }
+        .photo-card:nth-child(11) { animation-delay: 31s; }
+        .photo-card:nth-child(12) { animation-delay: 34s; }
+        .photo-card:nth-child(13) { animation-delay: 37s; }
+        .photo-card:nth-child(14) { animation-delay: 40s; }
+        .photo-card:nth-child(15) { animation-delay: 43s; }
+        .photo-card:nth-child(16) { animation-delay: 45s; }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .photo-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .caption {
+            padding: 16px;
+            text-align: center;
+            font-size: 15px;
+            font-style: italic;
+            color: #6b5a5a;
+        }
+
+        .caption span {
+            opacity: 0.7;
+            font-weight: 500;
+        }
+
+        /* ЗАВЕРШЕННЯ */
+        .outro {
+            margin-top: 90px;
+            text-align: center;
+        }
+
+        .outro p {
+            font-weight: 300;
+            font-size: 17px;
+        }
+
+        .outro .emoji {
+            margin-top: 25px;
+            font-size: 20px;
+            letter-spacing: 8px;
+            opacity: 0.6;
+        }
+
+       .text-frame {
+    position: relative;
+    background: rgba(255, 255, 255, 0.42);
+    border-radius: 34px;
+    padding: 44px 38px;
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 18px 36px rgba(0,0,0,0.06),
+        inset 0 0 0 1px rgba(255,255,255,0.25);
+}
+
+/* ===== ДЕКОРАТИВНИЙ КОНТУР ===== */
+.text-frame::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border-radius: 26px;
+    border: 1px solid rgba(255,255,255,0.35);
+    pointer-events: none;
+}
+
+
+.intro.text-frame {
+    margin-bottom: 90px;
+}
+
+.outro.text-frame {
+    margin-top: 100px;
+}
+
+/* ===== Живі емодзі ===== */
+.intro .emoji,
+.outro .emoji {
+    display: inline-block;
+    animation: floatEmoji 6s ease-in-out infinite;
+}
+
+@keyframes floatEmoji {
+    0%   { transform: translateY(0); opacity: 0.6; }
+    50%  { transform: translateY(-10px); opacity: 0.9; }
+    100% { transform: translateY(0); opacity: 0.6; }
+}
+
+/* ===== Декоративні смайли ===== */
+.floating-emojis {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.floating-emojis span {
+    position: absolute;
+    font-size: 20px;
+    opacity: 0.35;
+    animation: drift 18s linear infinite;
+}
+
+.floating-emojis span:nth-child(1) { left: 10%; top: 20%; animation-duration: 22s; }
+.floating-emojis span:nth-child(2) { left: 80%; top: 30%; animation-duration: 26s; }
+.floating-emojis span:nth-child(3) { left: 20%; top: 70%; animation-duration: 24s; }
+.floating-emojis span:nth-child(4) { left: 60%; top: 80%; animation-duration: 28s; }
+.floating-emojis span:nth-child(5) { left: 40%; top: 40%; animation-duration: 30s; }
+
+@keyframes drift {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-30px); }
+    100% { transform: translateY(0); }
+}
+
+.caption {
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.photo-card:hover .caption {
+    transform: translateY(-4px);
+    opacity: 0.85;
+}
+
+/* ===== ДОДАТКОВІ ЖИВІ СМАЙЛИ ===== */
+.floating-emojis span {
+    position: absolute;
+    font-size: 22px;
+    opacity: 0.25;
+    animation: floatSlow 22s ease-in-out infinite;
+}
+
+@keyframes floatSlow {
+    0%   { transform: translateY(0) translateX(0); }
+    50%  { transform: translateY(-40px) translateX(10px); }
+    100% { transform: translateY(0) translateX(0); }
+}
+
+
+
+.final {
+    margin-top: 140px;
+    padding: 80px 20px 100px;
+    text-align: center;
+}
+
+.final p {
+    font-size: 18px;
+    font-weight: 300;
+    opacity: 0.85;
+}
+
+.heart {
+    font-size: 56px;
+    color: #ffffff;
+    margin-bottom: 25px;
+    animation: heartbeat 2.2s ease-in-out infinite;
+    text-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+@keyframes heartbeat {
+    0%   { transform: scale(1); }
+    25%  { transform: scale(1.15); }
+    40%  { transform: scale(1); }
+    60%  { transform: scale(1.18); }
+    100% { transform: scale(1); }
+}
+
+.floating-emojis span {
+    position: absolute;
+    font-size: 22px;
+    opacity: 0.75; /* легка прозорість для атмосфери /
+    filter: blur(0.2px); / м’який ефект “повітряності” */
+    animation:
+        floatSlow 22s ease-in-out infinite,
+        shimmer 6s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 0.85; }
+}
+
+
+
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="floating-emojis">
+    <span style="left:8%;  top:15%;">♡</span>
+    <span style="left:18%; top:70%;">🌸</span>
+    <span style="left:35%; top:40%;">✨</span>
+    <span style="left:50%; top:10%;">☁︎</span>
+    <span style="left:65%; top:60%;">💫</span>
+    <span style="left:78%; top:25%;">🫧</span>
+    <span style="left:85%; top:75%;">💗</span>
+    <span style="left:25%; top:20%;">✧</span>
+    <span style="left:45%; top:80%;">𖤐</span>
+</div>
+
+    <!-- ВСТУП -->
+    <section class="intro text-frame">
+        <h1>Congratulations dear ❤</h1>
+        <p>
+            ღАяяяяййй а в кого це сьогодні День народженняღ
+           ღА я знаю в найкращої дівчинки в світіღ
+            ღВ якої вийде досягнути всіх своїх цілейღ
+            ღІ завжди бути щасливоюღ Багато балаканинии,(бла-бла-бла мій стиль)давай вже переходити до діла
+            ===Дивимося що ж там нижче===
+            ☟
+        </p>
+        <span class="emoji">♡ ✧ ☁︎</span>
+    </section>
+
+    <!-- ГАЛЕРЕЯ -->
+    <section class="gallery">
+
+        <div class="photo-card">
+            <img src="images/photo2.jpg">
+            <div class="caption">Займайся спотріком(розтяжка храмає) 𓀪 <span>♡</span></div>
+        </div>
+
+        <div class="photo-card">
+            <img src="images/photo4.jpg">
+            <div class="caption">До речі наша перша фотка(ти була така стісняшка) <span>✧</span></div>
+        </div>
+
+        <div class="photo-card">
+            <img src="images/photo6.jpg">
+            <div class="caption">Завжди все встигати (Ka-Chow)<span>☁︎</span></div>
+        </div>
+
+        <div class="photo-card">
+            <img src="images/photo15.jpg">
+            <div class="caption">Thnk що підстригла цього тіпа(каже що зараз краще) ♡</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="images/photo24.jpg">
+            <div class="caption">Щоб оточували завжди вірні друзі ✧</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="images/photo25.jpg">
+            <div class="caption">Щоб долала всі перешкоди ☁︎</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="images/photo21.jpg">
+            <div class="caption">Бути такою "ігрівою" ☁︎</div>
+        </div>
+        
+        <div class="photo-card">
+            <img src="images/photo26.jpg">
+            <div class="caption">Хрумкати тільки вкусняшки ☁︎</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="images/photo27.jpg">
+            <div class="caption">Побільше подорожей ☁︎</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="images/photo14.jpg">
+            <div class="caption">Завжди сяяти ☁︎</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="images/photo23.jpg">
+            <div class="caption">Упоротості трішкі більше в житті ☁︎</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="images/photo16.jpg">
+            <div class="caption">Щоб ні один двіж без тебе не проходив ☁︎</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="images/photo1.jpg">
+            <div class="caption">Нехай малючок завжди буде слухняним ☁︎</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="images/photo28.jpg.">
+            <div class="caption">Ці оченята КАЙФ ☁︎</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="images/photo11.jpg">
+            <div class="caption">Залишайся такою STAR 𖤐</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="images/photo22.jpg">
+            <div class="caption">ЦЬООООООООМММК </div>
+        </div>
+
+    </section>
+
+    <!-- ЗАВЕРШЕННЯ -->
+    <section class="final">
+    <div class="heart">❤</div>
+    <p>
+         Only For YOUUUUU
+        Від мене,від людини з якою в тебе дуже багато позитивних спогадів!
+        Надіюсь тобі сподобалось:0
+    </p>
+</section>
+
+</div>
+</body>
